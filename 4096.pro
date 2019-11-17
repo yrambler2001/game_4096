@@ -5,10 +5,13 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += network
+
+
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = ExpGame
+TARGET = 4096
 TEMPLATE = app
 QMAKE_CXXFLAGS += -std=c++11
 
@@ -18,21 +21,29 @@ SOURCES += main.cpp\
     core/board.cpp \
     core/game.cpp \
     gui/qgameboard.cpp \
+    gui/qscorebutton.cpp \
     gui/qtile.cpp \
     gui/qresetbutton.cpp \
     core/observer.cpp \
     core/subject.cpp \
-    gui/qgameoverwindow.cpp
+    gui/qgameoverwindow.cpp \
+    gui/scorewindow.cpp
 
 HEADERS  += gui/mainwindow.h \
     core/tile.h \
     core/board.h \
     core/game.h \
     gui/qgameboard.h \
+    gui/qscorebutton.h \
     gui/qtile.h \
     gui/qresetbutton.h \
     core/observer.h \
     core/subject.h \
     gui/qgameoverwindow.h \
-    gui/qwinwindow.h
+    gui/qwinwindow.h \
+    gui/scorewindow.h
+	
+FORMS    += \
+    gui/scorewindow.ui
+
 

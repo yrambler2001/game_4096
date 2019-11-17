@@ -12,8 +12,11 @@
 #include <QKeyEvent>
 #include <QVBoxLayout>
 #include <QString>
-
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <iostream>
 #include <QDebug>
+#include <stdlib.h>
 
 QGameBoard::~QGameBoard()
 {
@@ -80,9 +83,10 @@ void QGameBoard::keyPressEvent(QKeyEvent *event)
 
 void QGameBoard::notify()
 {
-    if (game->isGameOver())
+    if (game->isGameOver()){
+        gameOverWindow.setScore(game->getScore());
         gameOverWindow.show();
-
+}
     if (game->won())
         score->setText(QString("You hit 4096, congratulations! Keep playing to increase your score.\t\t SCORE: %1").arg(game->getScore()));
     else

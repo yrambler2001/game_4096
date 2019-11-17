@@ -1,5 +1,6 @@
 #include "qgameoverwindow.h"
 #include "qresetbutton.h"
+#include "qscorebutton.h"
 
 #include <QVBoxLayout>
 #include <QLabel>
@@ -10,7 +11,7 @@ QGameOverWindow::QGameOverWindow(QWidget *parent) :
     QWidget(parent)
 {
     setStyleSheet("QGameOverWindow { background: rgb(237,224,200); }");
-    setFixedSize(425,205);
+    setFixedSize(625,205);
     QVBoxLayout *layout = new QVBoxLayout(this);
     // game over label
     QLabel* gameover = new QLabel("Game Over!", this);
@@ -20,13 +21,21 @@ QGameOverWindow::QGameOverWindow(QWidget *parent) :
     // reset button
     reset = new QResetButton(this);
     reset->setFixedHeight(50);
-    reset->setFixedWidth(100);
+    reset->setFixedWidth(100);    
+    scorebutton = new QScoreButton(this);
+    scorebutton->setFixedHeight(50);
+    scorebutton->setFixedWidth(100);
     // add game over label to window
     layout->insertWidget(0,creators,0,Qt::AlignCenter);
     layout->insertWidget(0,gameover,0,Qt::AlignCenter);
     // add reset button to window
-    layout->insertWidget(1,reset,0,Qt::AlignCenter);
+    layout->insertWidget(1,reset,0,Qt::AlignCenter);    
+    layout->insertWidget(1,scorebutton,0,Qt::AlignCenter);    
 }
+void  QGameOverWindow::setScore(long long int score){
+    scorebutton->setScore(score);
+}
+
 
 QResetButton* QGameOverWindow::getResetBtn() const
 {
