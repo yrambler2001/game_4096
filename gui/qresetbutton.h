@@ -7,7 +7,7 @@ class QResetButton : public QLabel
 {
     Q_OBJECT
 public:
-    QResetButton( QWidget* parent = 0);
+    QResetButton( QWidget* parent = nullptr);
 
 signals:
     void clicked();

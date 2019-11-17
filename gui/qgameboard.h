@@ -19,7 +19,7 @@ class QGameBoard : public QWidget, public Observer
 {
     Q_OBJECT
 public:
-    explicit QGameBoard(QWidget *parent = 0);
+    explicit QGameBoard(QWidget *parent = nullptr);
     ~QGameBoard();
 
     void notify();

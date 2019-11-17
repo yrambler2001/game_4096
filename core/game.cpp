@@ -43,7 +43,7 @@ bool Game::won() const
 {
     for (int i = 0; i < board->getDimension(); ++i)
         for (int j = 0; j < board->getDimension(); ++j)
-            if (board->getTile(i,j) != NULL && board->getTile(i,j)->getValue() == WINNING_VALUE)
+            if (board->getTile(i,j) != nullptr && board->getTile(i,j)->getValue() == WINNING_VALUE)
                 return true;
 
     return false;

@@ -11,7 +11,7 @@ QTile::QTile(Tile* tile)
 
 void QTile::draw()
 {
-    if (tile == NULL) {
+    if (tile == nullptr) {
         setText("");
         setStyleSheet("QTile { background: rgb(204,192,179); border-radius: 10px; }");
     } else {

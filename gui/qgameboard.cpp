@@ -31,7 +31,7 @@ QGameBoard::QGameBoard(QWidget *parent) :
     setLayout(mainLayout);
 
     // will be created in drawBoard()
-    boardLayout = NULL;
+    boardLayout = nullptr;
 
     // create the game and register as observer
     // set default rows and columns
@@ -45,7 +45,7 @@ QGameBoard::QGameBoard(QWidget *parent) :
         gui_board[i].resize(game->getGameBoard()->getDimension());
     for (int i = 0; i < game->getGameBoard()->getDimension(); ++i)
         for (int j = 0; j < game->getGameBoard()->getDimension(); ++j)
-            gui_board[i][j] = NULL;
+            gui_board[i][j] = nullptr;
     drawBoard();
 
     // create the score widget and add it to the board

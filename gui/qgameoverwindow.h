@@ -9,7 +9,7 @@ class QGameOverWindow : public QWidget
 {
     Q_OBJECT
 public:
-    explicit QGameOverWindow(QWidget *parent = 0);
+    explicit QGameOverWindow(QWidget *parent = nullptr);
 
     QResetButton* getResetBtn() const;
 

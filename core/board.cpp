@@ -23,8 +23,8 @@ Board::Board(const Board &other)
     init();
     for (int i = 0; i < dimension; ++i)
         for (int j = 0; j < dimension; ++j) {
-            if (other.board[i][j] == NULL)
-                board[i][j] = NULL;
+            if (other.board[i][j] == nullptr)
+                board[i][j] = nullptr;
             else
                 board[i][j] = new Tile(*(other.board[i][j]));
         }
@@ -46,7 +46,7 @@ void Board::init()
     // for loop run through board create tiles
     for (int i = 0; i < dimension; ++i)
         for (int j = 0; j < dimension; ++j)
-            board[i][j] = NULL;
+            board[i][j] = nullptr;
 }
 
 QVector<int> Board::freePosition()
@@ -60,7 +60,7 @@ QVector<int> Board::freePosition()
         do {
             i = rand() % dimension;
             j = rand() % dimension;
-        } while (board[i][j] != NULL);
+        } while (board[i][j] != nullptr);
         pos.append(i);
         pos.append(j);
     }
@@ -73,9 +73,9 @@ bool Board::changed(Board& other) const
         return false;
     for (int i = 0; i < dimension; i++)
         for (int j = 0; j < dimension; ++j)
-            if ( ( (board[i][j] == NULL && other.board[i][j] != NULL) ||
-                   (board[i][j] != NULL && other.board[i][j] == NULL) ) ||
-                 ( (board[i][j] != NULL && other.board[i][j] != NULL) &&
+            if ( ( (board[i][j] == nullptr && other.board[i][j] != nullptr) ||
+                   (board[i][j] != nullptr && other.board[i][j] == nullptr) ) ||
+                 ( (board[i][j] != nullptr && other.board[i][j] != nullptr) &&
                    board[i][j]->getValue() != other.board[i][j]->getValue()) )
                 return true;
     return false;
@@ -89,7 +89,7 @@ void Board::reset()
     for (int i = 0; i < dimension ; ++i) {
         for (int j = 0; j < dimension; ++j) {
             delete board[i][j];
-            board[i][j] = NULL;
+            board[i][j] = nullptr;
         }
     }
 
@@ -179,7 +179,7 @@ bool Board::movePossible() const
 
 void Board::moveHorizontally(int i, int j, Direction dir)
 {
-    if (board[i][j] != NULL) {
+    if (board[i][j] != nullptr) {
         bool tileCollision = false;
         int newj;
         if (dir == RIGHT)
@@ -189,7 +189,7 @@ void Board::moveHorizontally(int i, int j, Direction dir)
             newj = j - 1;
 
         // keep going in dir direction until we encounter something or get out of bounds
-        while (inbounds(i,newj) && board[i][newj] == NULL) {
+        while (inbounds(i,newj) && board[i][newj] == nullptr) {
             if (dir == RIGHT)
                 newj++;
             else
@@ -223,7 +223,7 @@ void Board::moveHorizontally(int i, int j, Direction dir)
         // remove the original tile if we made multiple moves
         // or if we did not make multiple moves but we merged with the tile we were standing next to
         if ( (dir == RIGHT && newj-1 != j) || (dir == LEFT && newj+1 != j) || tileCollision )
-            board[i][j] = NULL;
+            board[i][j] = nullptr;
 
         if (tileCollision)
             tileCollisionLastRound = true;
@@ -232,7 +232,7 @@ void Board::moveHorizontally(int i, int j, Direction dir)
 
 void Board::moveVertically(int i, int j, Direction dir)
 {
-    if (board[i][j] != NULL) {
+    if (board[i][j] != nullptr) {
         bool tileCollision = false;
         int newi;
         if (dir == UP)
@@ -242,7 +242,7 @@ void Board::moveVertically(int i, int j, Direction dir)
             newi = i + 1;
 
         // keep going in dir direction until we encounter something or get out of bounds
-        while (inbounds(newi,j) && board[newi][j] == NULL) {
+        while (inbounds(newi,j) && board[newi][j] == nullptr) {
             if (dir == UP)
                 newi--;
             else
@@ -275,7 +275,7 @@ void Board::moveVertically(int i, int j, Direction dir)
         // remove the original tile if we made multiple moves
         // or if we did not make multiple moves but we merged with the tile we were standing next to
         if ( (dir == UP && newi+1 != i) || (dir == DOWN && newi-1 != i) || tileCollision )
-            board[i][j] = NULL;
+            board[i][j] = nullptr;
 
         if (tileCollision)
             tileCollisionLastRound = true;
@@ -295,7 +295,7 @@ bool Board::full() const
     bool full = true;
     for (int i = 0; i < dimension; ++i)
         for (int j = 0; j < dimension; ++j)
-            if (board[i][j] == NULL)
+            if (board[i][j] == nullptr)
                 full = false;
     return full;
 }
