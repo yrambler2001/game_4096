@@ -1,0 +1,4 @@
+#ifndef QSCOREBUTTON_H
+#define QSCOREBUTTON_H
+
+#endif // QSCOREBUTTON_H
