@@ -10,15 +10,108 @@ using System.Linq;
 
 namespace HTTPServer
 {
+	class ResponseProcessor
+	{
+		string Data;
+		public ResponseProcessor()
+		{
+			Data = "";
+		}
+		public void add(string s)
+		{
+			Data += s;
+		}
+		public void set(string s)
+		{
+			Data = s;
+		}
+		public byte[] toBuffer()
+		{
+			byte[] Buffer = Encoding.ASCII.GetBytes(Data);
+			return Buffer;
+		}
+	}
+	class ClientResponseProcessor : ResponseProcessor
+	{
+		public ClientResponseProcessor()
+		{
+		}
+		public void generateError(int Code)
+		{
+			string CodeStr = Code.ToString() + " " + ((HttpStatusCode)Code).ToString();
+			string Html = "<html><body><h1>" + CodeStr + "</h1></body></html>";
+			string Str = "HTTP/1.1 " + CodeStr + "\nContent-type: text/html\nContent-Length:" + Html.Length.ToString() + "\n\n" + Html;
+			set(Html + Str);
+		}
+		public void addHeader()
+		{
+		}
+	}
+	class FileReader : TextReader
+	{
+		string fileName = "";
+		public FileReader(string s)
+		{
+			fileName = s;
+		}
+		public override void Close()
+		{
+			base.Close();
+		}
+
+		public override bool Equals(object obj)
+		{
+			return base.Equals(obj);
+		}
+
+		public override int GetHashCode()
+		{
+			return base.GetHashCode();
+		}
+
+		public override string ReadToEnd()
+		{
+			return File.ReadAllText(fileName);
+		}
+
+		public override string ToString()
+		{
+			return base.ToString();
+		}
+	}
+
+	class DataBaseReader : FileReader
+	{
+		public DataBaseReader(string s) : base(s)
+		{ }
+
+		public List<long> GetDataFromDB()
+		{
+			List<long> l = ReadToEnd().Split(',').Select((stringValue) =>
+			{
+				try
+				{
+					long parsed = int.Parse(stringValue);
+					return parsed;
+				}
+				catch (Exception) { return 0; }
+			}).Where(x => (x + "").Length > 0 && x != 0).ToList();
+			l.Sort();
+			l.Reverse();
+			return l;
+		}
+	}
 	class Client
 	{
 		static long prev = 0;
 		private void SendError(TcpClient Client, int Code)
 		{
-			string CodeStr = Code.ToString() + " " + ((HttpStatusCode)Code).ToString();
-			string Html = "<html><body><h1>" + CodeStr + "</h1></body></html>";
-			string Str = "HTTP/1.1 " + CodeStr + "\nContent-type: text/html\nContent-Length:" + Html.Length.ToString() + "\n\n" + Html;
-			byte[] Buffer = Encoding.ASCII.GetBytes(Str);
+			ClientResponseProcessor CRP = new ClientResponseProcessor();
+			CRP.generateError(Code);
+			closeClientWithBuffer(Client, CRP.toBuffer());
+		}
+		private void closeClientWithBuffer(TcpClient Client, byte[] Buffer)
+		{
 			Client.GetStream().Write(Buffer, 0, Buffer.Length);
 			Client.Close();
 		}
@@ -60,7 +153,8 @@ namespace HTTPServer
 
 			if (RequestUri.EndsWith("/") || RequestUri == "")
 			{
-				var stream = new MemoryStream();
+				ClientResponseProcessor CRP = new ClientResponseProcessor();
+
 				try
 				{
 					string data = "";
@@ -68,39 +162,22 @@ namespace HTTPServer
 					{
 						data += "<!DOCTYPE html>";
 						data += "<html>";
-						List<long> l = File.ReadAllText(filename).Split(',').Select((stringValue) =>
-						{
-							try
-							{
-								long parsed = int.Parse(stringValue);
-								return parsed;
-							}
-							catch (Exception) { return 0; }
-						}).Where(x => (x + "").Length > 0 && x != 0).ToList();
-						l.Sort();
-						l.Reverse();
+						DataBaseReader DBReader = new DataBaseReader(filename);
+						List<long> dataFromDB = DBReader.GetDataFromDB();
 						int i = 0;
-						data += l.Select(x => (((++i) > 3) ? "<div>" : "<div><b>") + x + ((i > 3) ? "</div>" : "</b></div>")).Aggregate("", (prev, curr) => prev + curr);
+						data += dataFromDB.Select(x => (((++i) > 3) ? "<div>" : "<div><b>") + x + ((i > 3) ? "</div>" : "</b></div>")).Aggregate("", (prev, curr) => prev + curr);
 						data += "</html>";
 					}
-					var writer = new StreamWriter(stream);
-					writer.Write(data);
-					writer.Flush();
-					stream.Position = 0;
+					CRP.add(data);
+					byte[] ResponseBuffer = CRP.toBuffer();
 
-					string Headers = "HTTP/1.1 200 OK\nContent-Type: " + "text/html" + "\nContent-Length: " + stream.Length + "\n\n";
+					string Headers = "HTTP/1.1 200 OK\nContent-Type: " + "text/html" + "\nContent-Length: " + ResponseBuffer.Length + "\n\n";
 					byte[] HeadersBuffer = Encoding.ASCII.GetBytes(Headers);
 					Client.GetStream().Write(HeadersBuffer, 0, HeadersBuffer.Length);
-
-					while (stream.Position < stream.Length)
-					{
-						Count = stream.Read(Buffer, 0, Buffer.Length);
-						Client.GetStream().Write(Buffer, 0, Count);
-					}
+					closeClientWithBuffer(Client, ResponseBuffer);
 					Console.WriteLine("sent");
 				}
 				catch (Exception e) { Console.WriteLine("error " + e.ToString()); }
-				stream.Close();
 				Client.Close();
 			}
 			else
@@ -108,6 +185,7 @@ namespace HTTPServer
 				try
 				{
 					string newValue = RequestUri.Replace("/", "");
+					if (newValue == "favicon.ico") { return; }
 					long newIntValue = Int32.Parse(newValue);
 					if (newIntValue != prev)
 					{

@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Board">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAEFCABAACAAAAAAARIAAADAAMAIAAAACEBMQA=</HashCode>
+      <FileName>core\board.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game">
+    <Position X="2.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAACAAAAIABCAAAiAAACAIAAAAAAEAIA=</HashCode>
+      <FileName>core\game.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Observer">
+    <Position X="7" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAACAA=</HashCode>
+      <FileName>core\observer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Subject">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAACAAAIAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>core\subject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tile">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAgAAACACAAAAAAAAAAIAAAACAAAAAAAAAAAQA=</HashCode>
+      <FileName>core\tile.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainWindow" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gui\mainwindow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QGameBoard">
+    <Position X="5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAEAAAAIIAAAAABQAAAYQAAAQBAAAAA=</HashCode>
+      <FileName>gui\qgameboard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QGameOverWindow" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAABAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gui\qgameoverwindow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QResetButton" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gui\qresetbutton.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QTile" Collapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABABAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gui\qtile.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QWinWindow" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gui\qwinwindow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QWidget">
+    <Position X="10" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hA6pAGgYqICSoYVAaL8yqpBimu1GwLWO4PBqCgXdwII=</HashCode>
+      <FileName>C:\Qt\5.12.6\msvc2017_64\include\QtWidgets\qwidget.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QObject">
+    <Position X="13.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CCgAAAAQQIAAAAVUgQAAEMCGAAMQiIIHBEAiIhJGACU=</HashCode>
+      <FileName>C:\Qt\5.12.6\msvc2017_64\include\QtCore\qobject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QPaintDevice">
+    <Position X="16" Y="1.75" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="QPaintDevice::PaintDeviceMetric" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>C:\Qt\5.12.6\msvc2017_64\include\QtGui\qpaintdevice.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAIAQIQQKAAQEiAIIAAAAAgAiIMAAgAEA=</HashCode>
+      <FileName>C:\Qt\5.12.6\msvc2017_64\include\QtGui\qpaintdevice.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Direction">
+    <Position X="11.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAICAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>core\board.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

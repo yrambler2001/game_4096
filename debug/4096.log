@@ -1,0 +1,34 @@
+﻿  Generate moc_predefs.h
+  Reading Qt configuration (C:\Qt\5.12.6\msvc2017_64\bin\qmake.exe)
+  Moc'ing gui\mainwindow.h...
+  Moc'ing gui\qgameboard.h...
+  Moc'ing gui\qgameoverwindow.h...
+  Moc'ing gui\qresetbutton.h...
+  Moc'ing gui\qtile.h...
+  Moc'ing gui\qwinwindow.h...
+cl : Command line warning D9002: ignoring unknown option '-std=c++11'
+cl : Command line warning D9002: ignoring unknown option '-std=c++11'
+  board.cpp
+cl : Command line warning D9002: ignoring unknown option '-std=c++11'
+  game.cpp
+cl : Command line warning D9002: ignoring unknown option '-std=c++11'
+  main.cpp
+cl : Command line warning D9002: ignoring unknown option '-std=c++11'
+  mainwindow.cpp
+  observer.cpp
+  qgameboard.cpp
+  qgameoverwindow.cpp
+  qresetbutton.cpp
+  qtile.cpp
+c:\users\yramb\onedrive\kursova\new folder\4096\gui\qresetbutton.cpp(11): warning C4100: 'event': unreferenced formal parameter
+  subject.cpp
+  tile.cpp
+  moc_mainwindow.cpp
+  moc_qgameboard.cpp
+  moc_qgameoverwindow.cpp
+  moc_qresetbutton.cpp
+  moc_qtile.cpp
+  moc_qwinwindow.cpp
+qgameoverwindow.obj : error LNK2019: unresolved external symbol "public: __cdecl QScoreButton::QScoreButton(class QWidget *)" (??0QScoreButton@@QEAA@PEAVQWidget@@@Z) referenced in function "public: __cdecl QGameOverWindow::QGameOverWindow(class QWidget *)" (??0QGameOverWindow@@QEAA@PEAVQWidget@@@Z)
+qgameoverwindow.obj : error LNK2019: unresolved external symbol "public: void __cdecl QScoreButton::setScore(__int64)" (?setScore@QScoreButton@@QEAAX_J@Z) referenced in function "public: void __cdecl QGameOverWindow::setScore(__int64)" (?setScore@QGameOverWindow@@QEAAX_J@Z)
+debug\\4096.exe : fatal error LNK1120: 2 unresolved externals

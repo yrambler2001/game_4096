@@ -11,3 +11,10 @@ C:\Users\yramb\Desktop\HTTPServer\HTTPServer\obj\x86\Debug\HTTPServer.csprojAsse
 C:\Users\yramb\Desktop\HTTPServer\HTTPServer\obj\x86\Debug\HTTPServer.csproj.CoreCompileInputs.cache
 C:\Users\yramb\Desktop\HTTPServer\HTTPServer\obj\x86\Debug\HTTPServer.exe
 C:\Users\yramb\Desktop\HTTPServer\HTTPServer\obj\x86\Debug\HTTPServer.pdb
+C:\Users\yramb\OneDrive\kursova\New folder\4096\SERVER\HTTPServer\bin\Debug\HTTPServer.exe.config
+C:\Users\yramb\OneDrive\kursova\New folder\4096\SERVER\HTTPServer\bin\Debug\HTTPServer.exe
+C:\Users\yramb\OneDrive\kursova\New folder\4096\SERVER\HTTPServer\bin\Debug\HTTPServer.pdb
+C:\Users\yramb\OneDrive\kursova\New folder\4096\SERVER\HTTPServer\obj\x86\Debug\HTTPServer.csprojAssemblyReference.cache
+C:\Users\yramb\OneDrive\kursova\New folder\4096\SERVER\HTTPServer\obj\x86\Debug\HTTPServer.csproj.CoreCompileInputs.cache
+C:\Users\yramb\OneDrive\kursova\New folder\4096\SERVER\HTTPServer\obj\x86\Debug\HTTPServer.exe
+C:\Users\yramb\OneDrive\kursova\New folder\4096\SERVER\HTTPServer\obj\x86\Debug\HTTPServer.pdb

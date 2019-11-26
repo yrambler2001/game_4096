@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Board" Collapsed="true">
+    <Position X="6.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAEFCABAACAAAAAAARIAAADAAMAIAAAACEBMQA=</HashCode>
+      <FileName>core\board.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game" Collapsed="true">
+    <Position X="8.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAACAAAAIABCAAAiAAACAIAAAAAAEAIA=</HashCode>
+      <FileName>core\game.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainWindow" Collapsed="true">
+    <Position X="15.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gui\mainwindow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Observer">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAACAA=</HashCode>
+      <FileName>core\observer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QGameBoard" Collapsed="true">
+    <Position X="6.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAEAAAAIIAAAAABQAAAYQAAAQBAAAAA=</HashCode>
+      <FileName>gui\qgameboard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QGameOverWindow" Collapsed="true">
+    <Position X="13.25" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAABAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gui\qgameoverwindow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QGridLayout" Collapsed="true">
+    <Position X="11.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UAALQBEAQAAABQIARA2ACAApA0EAAwAIhICAAAAAiEA=</HashCode>
+      <FileName>C:\Qt\5.12.6\msvc2017_64\include\QtWidgets\qgridlayout.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QKeyEvent">
+    <Position X="3.25" Y="13.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>FAAGAABQgAQAAgAABAAEAAAEAIAAEAGIgAAAAAAIAAQ=</HashCode>
+      <FileName>C:\Qt\5.12.6\msvc2017_64\include\QtGui\qevent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLabel" Collapsed="true">
+    <Position X="20.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAIgECEQpVCYIAQBFAZKAB0AQEQAgIIACCAAgAAKAE=</HashCode>
+      <FileName>C:\Qt\5.12.6\msvc2017_64\include\QtWidgets\qlabel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QResetButton" Collapsed="true">
+    <Position X="20.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gui\qresetbutton.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QScoreButton" Collapsed="true">
+    <Position X="18" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gui\qscorebutton.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QTile" Collapsed="true">
+    <Position X="22.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABABAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gui\qtile.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QVBoxLayout" Collapsed="true">
+    <Position X="9.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Qt\5.12.6\msvc2017_64\include\QtWidgets\qboxlayout.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QWinWindow" Collapsed="true">
+    <Position X="8" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gui\qwinwindow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScoreWindow" Collapsed="true">
+    <Position X="3.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAEAAAAAAAIQCIAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gui\scorewindow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Subject" Collapsed="true">
+    <Position X="7.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAACAAAIAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>core\subject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tile" Collapsed="true">
+    <Position X="26" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAgAAACACAAAAAAAAAAIAAAACAAAAAAAAAAAQA=</HashCode>
+      <FileName>core\tile.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QWidget" Collapsed="true">
+    <Position X="10.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hA6pAGgYqICSoYVAaL8yqpBimu1GwLWO4PBqCgXdwII=</HashCode>
+      <FileName>C:\Qt\5.12.6\msvc2017_64\include\QtWidgets\qwidget.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QMainWindow" Collapsed="true">
+    <Position X="15.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoACQgKYCA0hRAgRkKBY4oAAABEAABuBggAgIAMgACA=</HashCode>
+      <FileName>C:\Qt\5.12.6\msvc2017_64\include\QtWidgets\qmainwindow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QObject" Collapsed="true">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CCgAAAAQQIAAAAVUgQAAEMCGAAMQiIIHBEAiIhJGACU=</HashCode>
+      <FileName>C:\Qt\5.12.6\msvc2017_64\include\QtCore\qobject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QPaintDevice" Collapsed="true">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="QPaintDevice::PaintDeviceMetric" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>C:\Qt\5.12.6\msvc2017_64\include\QtGui\qpaintdevice.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAIAQIQQKAAQEiAIIAAAAAgAiIMAAgAEA=</HashCode>
+      <FileName>C:\Qt\5.12.6\msvc2017_64\include\QtGui\qpaintdevice.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QFrame" Collapsed="true">
+    <Position X="20.25" Y="3.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="QFrame::Shape" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>C:\Qt\5.12.6\msvc2017_64\include\QtWidgets\qframe.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="QFrame::Shadow" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>C:\Qt\5.12.6\msvc2017_64\include\QtWidgets\qframe.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="QFrame::StyleMask" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>C:\Qt\5.12.6\msvc2017_64\include\QtWidgets\qframe.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>CQBIAAAACAAAACBAJAAAAAAAACAEIAYgIgAAYBAAIAA=</HashCode>
+      <FileName>C:\Qt\5.12.6\msvc2017_64\include\QtWidgets\qframe.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QInputEvent">
+    <Position X="3.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAQAAEAgAAAAAAAgACAAAAAAQ=</HashCode>
+      <FileName>C:\Qt\5.12.6\msvc2017_64\include\QtGui\qevent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QBoxLayout" Collapsed="true">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgJSAAAIAAAJCCABAyAAARoAgAAIZAABIABAgQYiEA=</HashCode>
+      <FileName>C:\Qt\5.12.6\msvc2017_64\include\QtWidgets\qboxlayout.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLayout" Collapsed="true">
+    <Position X="10.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AECAgAjQQAAARQAVBAnwQIJoBwAEAAAIBoAAiEREwFA=</HashCode>
+      <FileName>C:\Qt\5.12.6\msvc2017_64\include\QtWidgets\qlayout.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLayoutItem" Collapsed="true">
+    <Position X="23.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QACIQACAAACABABAAAQAAAAoAAQgAAAIAIAACAAAyAA=</HashCode>
+      <FileName>C:\Qt\5.12.6\msvc2017_64\include\QtWidgets\qlayoutitem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QEvent">
+    <Position X="3.25" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AQCAAACAAAAAAEgIAAAAAAAEABAJBAQEAFQgAAAAAAA=</HashCode>
+      <FileName>C:\Qt\5.12.6\msvc2017_64\include\QtCore\qcoreevent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Direction" Collapsed="true">
+    <Position X="26" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAICAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>core\board.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
