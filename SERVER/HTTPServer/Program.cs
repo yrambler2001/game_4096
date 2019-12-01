@@ -165,7 +165,16 @@ namespace HTTPServer
 						DataBaseReader DBReader = new DataBaseReader(filename);
 						List<long> dataFromDB = DBReader.GetDataFromDB();
 						int i = 0;
-						data += dataFromDB.Select(x => (((++i) > 3) ? "<div>" : "<div><b>") + x + ((i > 3) ? "</div>" : "</b></div>")).Aggregate("", (prev, curr) => prev + curr);
+
+						data += dataFromDB.Select(x =>
+						{
+							string Div = (((++i) > 3) ? "<div>" : "<div><b>");
+							string DivClose = ((i > 3) ? "</div>" : "</b></div>");
+							string H = ((i < 4) ? "<h" + i + ">" : "");
+							string HClose = ((i < 4) ? "<h" + i + ">" : "");
+							string BestScore = ((i == 1) ? "&#128077;" : "");
+							return Div + H + x + BestScore + HClose + DivClose;
+						}).Aggregate("", (prev, curr) => prev + curr);
 						data += "</html>";
 					}
 					CRP.add(data);
