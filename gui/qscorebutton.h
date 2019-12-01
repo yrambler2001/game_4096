@@ -8,7 +8,7 @@ class QScoreButton : public QLabel
 {
     Q_OBJECT
 public:
-    QScoreButton( QWidget* parent = nullptr);
+    QScoreButton( QWidget* parent = nullptr, bool isMainBoard = false);
     void setScore(long long int score);
 
 private:

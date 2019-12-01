@@ -1,9 +1,14 @@
+// This is a personal academic project. Dear PVS-Studio, please check it.
+
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 #include "gui/qgameboard.h"
 #include "core/board.h"
 #include "core/game.h"
 #include "gui/qtile.h"
 #include "core/tile.h"
 #include "gui/qresetbutton.h"
+#include "qresetbutton.h"
+#include "qscorebutton.h"
 
 #include <QVBoxLayout>
 #include <QGridLayout>
@@ -54,13 +59,30 @@ QGameBoard::QGameBoard(QWidget *parent) :
     // create the score widget and add it to the board
     score = new QLabel(QString("SCORE: %1").arg(game->getScore()));
     score->setStyleSheet("QLabel { color: rgb(235,224,214); font: 16pt; }");
-    score->setFixedHeight(50);
-    mainLayout->insertWidget(1, score, 0, Qt::AlignRight);
+    QHBoxLayout* bottomLayout = new QHBoxLayout();
+
+    reset = new QResetButton(this, true);
+    reset->setFixedHeight(50);
+    reset->setFixedWidth(100);
+    scorebutton = new QScoreButton(this, true);
+    scorebutton->setFixedHeight(50);
+    scorebutton->setFixedWidth(100);
+
+    // add reset button to window
+    bottomLayout->insertWidget(1,reset,0);
+    bottomLayout->insertWidget(1, score, 0, Qt::AlignRight);
+
+    bottomLayout->insertWidget(1,scorebutton,0);
+
+    mainLayout->addLayout(bottomLayout);
+    mainLayout->setStretchFactor(boardLayout,10);
+    mainLayout->setStretchFactor(bottomLayout,1);
 
     // style sheet of the board
     setStyleSheet("QGameBoard { background-color: rgb(187,173,160) }");
 
     connect(gameOverWindow.getResetBtn(), SIGNAL(clicked()), this, SLOT(resetGame()));
+    connect(this->getResetBtn(), SIGNAL(clicked()), this, SLOT(resetGame()));
 }
 
 void QGameBoard::keyPressEvent(QKeyEvent *event)
@@ -108,6 +130,8 @@ void QGameBoard::drawBoard()
         }
     }
     mainLayout->insertLayout(0, boardLayout);
+    mainLayout->setStretchFactor(boardLayout,10);
+
 }
 
 
@@ -118,3 +142,9 @@ void QGameBoard::resetGame()
     score->setText(QString("SCORE: %1").arg(game->getScore()));
     gameOverWindow.hide();
 }
+
+QResetButton* QGameBoard::getResetBtn() const
+{
+    return reset;
+}
+

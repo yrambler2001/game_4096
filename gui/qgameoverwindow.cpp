@@ -1,3 +1,6 @@
+// This is a personal academic project. Dear PVS-Studio, please check it.
+
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 #include "qgameoverwindow.h"
 #include "qresetbutton.h"
 #include "qscorebutton.h"
@@ -11,13 +14,13 @@ QGameOverWindow::QGameOverWindow(QWidget *parent) :
     QWidget(parent)
 {
     setStyleSheet("QGameOverWindow { background: rgb(237,224,200); }");
-    setFixedSize(625,205);
+    setFixedSize(625,285);
     QVBoxLayout *layout = new QVBoxLayout(this);
     // game over label
     QLabel* gameover = new QLabel("Game Over!", this);
     QLabel* creators = new QLabel("Created by Y. Synyshyn and A. Sowa", this);
-    gameover->setStyleSheet("QLabel { color: rgb(119,110,101); font: 40pt; font: bold;} ");
-    creators->setStyleSheet("QLabel { color: rgb(0,0,0); font: 20pt; font: bold;} ");
+    gameover->setStyleSheet("QLabel { color: rgb(119,110,101); font: 40px; font: bold;} ");
+    creators->setStyleSheet("QLabel { color: rgb(0,0,0); font: 20px; font: bold;} ");
     // reset button
     reset = new QResetButton(this);
     reset->setFixedHeight(50);

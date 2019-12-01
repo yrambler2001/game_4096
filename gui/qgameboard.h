@@ -21,6 +21,7 @@ class QGameBoard : public QWidget, public Observer
 public:
     explicit QGameBoard(QWidget *parent = nullptr);
     ~QGameBoard();
+    QResetButton* getResetBtn() const;
 
     void notify();
 
@@ -39,6 +40,9 @@ private:
     QGameOverWindow gameOverWindow;
     // winner widget
     QLabel *youwin;
+    QResetButton* reset;
+    QScoreButton* scorebutton;
+
 
     void drawBoard();
 
