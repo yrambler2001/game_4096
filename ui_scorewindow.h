@@ -33,7 +33,12 @@ public:
     {
         if (ScoreWindow->objectName().isEmpty())
             ScoreWindow->setObjectName(QString::fromUtf8("ScoreWindow"));
-        ScoreWindow->resize(115, 294);
+        ScoreWindow->resize(173, 294);
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(ScoreWindow->sizePolicy().hasHeightForWidth());
+        ScoreWindow->setSizePolicy(sizePolicy);
         verticalLayout = new QVBoxLayout(ScoreWindow);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
@@ -70,6 +75,11 @@ public:
     void retranslateUi(QWidget *ScoreWindow)
     {
         ScoreWindow->setWindowTitle(QApplication::translate("ScoreWindow", "Score Window", nullptr));
+        textEdit->setHtml(QApplication::translate("ScoreWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:10pt;\">1</span></p></body></html>", nullptr));
         lbStatus->setText(QString());
         bnGo->setText(QApplication::translate("ScoreWindow", "Refesh", nullptr));
     } // retranslateUi

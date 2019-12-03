@@ -83,6 +83,7 @@ QGameBoard::QGameBoard(QWidget *parent) :
 
     connect(gameOverWindow.getResetBtn(), SIGNAL(clicked()), this, SLOT(resetGame()));
     connect(this->getResetBtn(), SIGNAL(clicked()), this, SLOT(resetGame()));
+    connect(winWindow.getResetBtn(), SIGNAL(clicked()), this, SLOT(resetGame()));
 }
 
 void QGameBoard::keyPressEvent(QKeyEvent *event)
@@ -110,7 +111,10 @@ void QGameBoard::notify()
         gameOverWindow.show();
 }
     if (game->won())
+    {
+        winWindow.show();
         score->setText(QString("You hit 4096, congratulations! Keep playing to increase your score.\t\t SCORE: %1").arg(game->getScore()));
+    }
     else
         score->setText(QString("SCORE: %1").arg(game->getScore()));
 

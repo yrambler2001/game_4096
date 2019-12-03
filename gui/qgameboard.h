@@ -3,6 +3,7 @@
 
 #include "core/observer.h"
 #include "qgameoverwindow.h"
+#include "qwinwindow.h"
 
 #include <QVector>
 #include <QWidget>
@@ -38,6 +39,7 @@ private:
     QLabel *score;
     // game over widget
     QGameOverWindow gameOverWindow;
+    QWinWindow winWindow;
     // winner widget
     QLabel *youwin;
     QResetButton* reset;

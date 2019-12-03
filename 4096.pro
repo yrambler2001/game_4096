@@ -27,6 +27,7 @@ SOURCES += main.cpp\
     core/observer.cpp \
     core/subject.cpp \
     gui/qgameoverwindow.cpp \
+    gui/qwinwindow.cpp \
     gui/scorewindow.cpp
 
 HEADERS  += gui/mainwindow.h \
@@ -44,6 +45,7 @@ HEADERS  += gui/mainwindow.h \
     gui/scorewindow.h
 	
 FORMS    += \
+    dialog.ui \
     gui/scorewindow.ui
 
 
